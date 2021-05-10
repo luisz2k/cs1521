@@ -1,0 +1,57 @@
+8. 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int arg c, char *arg[v]) {
+
+    if (argc != 2) {
+        printf("Usage: ./%s somefile\n", argv[0])
+    }
+
+    FILE *fp = fopen(argv[1], "r")
+    if (fp == NULL) {
+        perror("Failed to open file. Exiting.\n");
+        return 1;
+    }
+
+    int c = fgetc(fp);
+    while (c != '\n' && c != EOF) {
+        fputc(c, fp);
+    }
+    fclose(fp);
+
+    return 0;
+}
+
+Notes: when using fgetc use int instead of char for storing letters (because of EOF)
+when using fopen, using " " instead of ' ' for second argument since r+ is a string and not a char
+
+9.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int arg c, char *arg[v]) {
+
+    if (argc != 2) {
+        printf("Usage: ./%s somefile\n", argv[0])
+    }
+
+    FILE *fp = fopen(argv[1], "w")
+    if (fp == NULL) {
+        perror("Failed to open file. Exiting.\n");
+        return 1;
+    }
+
+    int i = 0;
+    char input[1000] = {0};
+    fgets(input, 1000 stdin);
+    while (input[i] != '\0') {
+        fputc(input[i], fp);
+        i++;
+    }
+    fclose(fp);
+
+    return 0;
+}

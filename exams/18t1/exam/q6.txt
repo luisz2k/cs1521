@@ -1,0 +1,27 @@
+# COMP1521 18s1 Exam Q6
+
+A.
+
+i)
+
+Region1 is code
+
+ii)
+
+Region2 is data
+
+iii)
+
+Region3 is heap
+
+iv)
+
+Region4 is stack
+
+B.
+
+heap
+
+C.
+
+code & data are fixed in size

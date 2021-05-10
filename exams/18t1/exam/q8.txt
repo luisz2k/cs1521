@@ -1,0 +1,27 @@
+# COMP1521 18s1 Exam Q8
+
+A.
+
+difference between regular function call and syscall is that syscalls perform a context switch
+from user to privileged mode whereas regular function calls do not
+
+
+B.
+
+i)  malloc, free
+
+ii) lifetime of a dynamic data object starts when it is malloc'd and finishes once free'ed  
+
+
+C.
+
+2 ^ 2 = 4 times
+
+
+D. 
+
+i)  fork() returns pid of child to parent process on sucess, and 0 to the child process on success. Returns -1 if fails
+
+ii) ...
+
+

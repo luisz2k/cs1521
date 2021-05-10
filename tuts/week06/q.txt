@@ -1,0 +1,29 @@
+int a = 10; ->      a: .word 10 
+
+int b;      ->      b: .space 4
+
+int c[3];    ->      c: .space 12
+
+int d[3][3]     ->      d: .space 36
+
+
+Q14:
+
+.text 
+main:
+    li $a0, 3
+    li $a1, 4
+    la $a2, main
+    li $a3, 2
+
+    jal change
+
+change:
+
+    # prologue
+    addi $sp, $sp, -4
+    sw $ra, ($sp)
+
+    # epilogue
+    lw $ra, ($sp)
+    addi, $sp, $sp, 4

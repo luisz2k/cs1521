@@ -1,0 +1,38 @@
+1. 
+
+2. 
+
+a) decimal: 1   | binary: 00000001 | octal: | hexadecimal: 01
+b) decimal: 8   | binary: 00001000 | octal: | hexadecimal: 08
+c) decimal: 10  | binary: 00001010 | octal: | hexadecimal: 0A
+d) decimal: 15  | binary: 00001111 | octal: | hexadecimal: 0F
+e) decimal: 16  | binary: 00010000 | octal: | hexadecimal: 10
+f) decimal: 100 | binary: 01100100 | octal: | hexadecimal: 64
+g) decimal: 127 | binary: 01111111 | octal: | hexadecimal: 7F
+h) decimal: 200 | binary: 11001000 | octal: | hexadecimal: C8
+
+
+3. 
+
+a = 0x5555 -> 0101010101010101
+b = 0xAAAA -> 1010101010101010
+c = 0x0001 -> 0000000000000001
+
+~b          = 0101010101010101
+b << 1      = 0101010101010100
+~c 			= 1111111111111110
+
+a) a | b  		= 1111111111111111  -> 0xFFFF
+b) a & b  		= 0000000000000000  -> 0x0000
+c) a ^ b  		= 1111111111111111  -> 0xFFFF
+d) a & ~b 		= 0101010101010101  -> 0x5555
+e) c << 6 		= 0000000001000000  -> 0x0040
+f) a >> 4       = 0000010101010101  -> 0x0555
+g) a & (b << 1) = 0101010101010100  -> 0x5554
+h) b | c		= 1010101010101011  -> 0xAAAB
+i) a & ~c 		= 0101010101010100  -> 0x5554
+
+
+
+
+

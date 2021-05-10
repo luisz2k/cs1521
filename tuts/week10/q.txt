@@ -1,0 +1,8 @@
+5. https://www.cse.unsw.edu.au:443/cs9999/18s2/showMarks?item=quiz2
+
+protocol: https
+host: www.cse.unsw.edu.au
+port: 443
+path: /cs9999/18s2/showMarks
+query: item=quiz2
+

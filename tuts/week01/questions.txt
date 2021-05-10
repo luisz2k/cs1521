@@ -1,0 +1,34 @@
+2. note: %lu is format specifier unsigned long int, %p for pointer address
+
+n[0]++ increases the value of n[0] to 43 (42 + 1)
+printf("%d\n", *p) prints out 43
+printf("%p\n", p) prints out a memory address of n[1] 
+printf("%d\n", *p) prints out value of n[1] (23)
+
+3. prints out abc123 without the \n, the \n is treated as a newline character so a newline is printed instead
+note: if \n replaced by \\n then the \n would be printed out
+
+4 a)
+At state A:
+a{ .x = 5  .y = 6  .z = 7 }
+b{ .x = 3  .y = 3  .z = 3 }
+
+At state B:
+a{ .x = 6  .y = 7  .z = 8 }
+b{ .x = 6  .y = 7  .z = 8 }
+
+c)
+
+	for (p = &coords[0]; p <= &coords[9]; p++) {
+		*p = (.x = 0, .y = 0, .z = 0);
+	}
+	
+5.
+There are 4 memory regions: code, data, heap, stack (low memory to high memory)
+s1 is a global variable and can be accessed anywhere in the .c file, s2 is a local variable that can only be accessed in main function
+Global variables are stored in the data segment
+Local variables are stored on the stack
+
+
+
+

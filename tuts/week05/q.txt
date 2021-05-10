@@ -1,0 +1,43 @@
+1. If starting address is 0x10000020
+
+a) .word 42             0x10000024   |42|...
+b) .space 4             0x10000028   |42|?|
+c) .asciiz "abcde"      0x10000030   |42|?|abcde\0|
+   .align 2             0x10000030   |42|?|abcde\0|(2 bytes)|
+d) .byte 1, 2, 3, 4     0x10000034   |42|?|abcde\0|(2 bytes)|[1,2,3,4]|
+e) .word 1, 2, 3, 4     0x10000044   |42|?|abcde\0|(2 bytes)|[1,2,3,4]|[1, 2, 3, 4]|
+f) .space 1             0x10000044   |42|?|abcde\0|(2 bytes)|[1,2,3,4]|[1, 2, 3, 4]|(1 byte)|
+
+2
+a) int u;               u: .space 4
+b) int v = 42;          v: .word 42
+c) char w;              w: .space 1
+                           .align 3
+d) char x = 'a';        
+e) double y;            y: .space 8
+f) int z[20];           z: .space 80
+
+3. What value is loaded into $t0?
+
+|42|666|1|3|5|7|    
+
+a) la   $t0, aa         0x1001000     
+b) lw   $t0, bb         666
+c) lb   $t0, bb         
+d) lw   $t0, aa+4       666
+e) la   $t1, cc         $t1 = 0x10010008
+lw   $t0, ($t1)         $t0 = 1
+
+f) la   $t1, cc         $t1 = 0x10010008
+lw   $t0, 8($t1)        
+
+g) li   $t1, 8          $t1 = 8         
+lw   $t0, cc($t1)       $t0 = 5         NOTE: cc($t1) means adding value of $t1 to the address of cc
+
+la   $t1, cc
+lw   $t0, 2($t1)
+
+EXTRA NOTES:
+
+for loops in mips
+- use 2 labels, while1 and while1_end

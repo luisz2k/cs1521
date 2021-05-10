@@ -1,0 +1,27 @@
+# COMP1521 18s1 Exam Q4
+
+A.
+
+    x = 0001 0010 0011 0100
+    y = 1111 1110 1101 1100
+
+i)    x | y == 1111 1110 1111 1100
+
+ii)   x & y == 0001 0010 0001 0100
+
+iii)  x ^ y == 1110 1100 1110 1000
+
+iv)   ~ x   == 1110 1101 1100 1011
+
+B.
+
+The function f() ...
+
+x = 0001 0010 0011 0100
+y = 0100 0011 0010 0001
+
+*y = *x ^ *y;   --> y = 0101 0001 0001 0101
+*x = *x ^ *y;   --> x = 0100 0011 0010 0001
+*y = *x ^ *y;   --> y = 0001 0010 0011 0100
+
+The function swaps the bits pointed to by x and y, y now points to the bits that x was pointing to and vice versa

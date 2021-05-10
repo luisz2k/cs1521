@@ -1,0 +1,25 @@
+WEEK 4 TUT QUESTIONS
+
+1. 
+
+Register   |   Symbolic Name   |   Intended Use
+$0			$zero					constant 0
+$1			$at						reserved for assembler
+$2, 3		$v0, $v1				expression evaluation and results of a function
+$4..7		$a0..$a3				arguments 1-4
+$8..16		$t0..$t7				temp (not preserved across function calls)
+$16..23		$s0..$s7				saved temp 
+$26, 27		$t8, $t9				temp
+$29			$sp						stack pointer
+$31			$ra						return address
+
+
+Notes: 
+- do not use 0?, 1, 31
+- use 8..23 for holding values
+
+
+2. 	
+
+
+

@@ -1,0 +1,45 @@
+1. a) /home/cs1521/web
+
+b) ~jas/../..  ->  /
+
+c) /..
+d) file
+e) directory
+f) 
+g) symbolic link: a special file that serves as a reference to another file or directory
+
+3 b) Execute
+c) Symbolic link pointing to public_html folder
+d) 
+
+int main(int argc, char *argv[]) {
+    for (int arg = 1; arg < argc; arg++) {
+        chmod_if_needed(argv[arg]);
+    }
+    return 0;
+}
+
+void chmod_if_needed(char *pathname) {
+    struct stat s;
+    // call stat, print error if stat(pathname, &s) != 0
+    if (stat(pathname, &s) != 0) {
+        perror("stat");
+        exit(0);
+    }
+
+    node_t mode = s.st_mode
+    // if not publically writable, printf("%s is not publically writable\n", pathname);
+    if (!(mode & 2)) {
+        printf("%s is not publically writable\n", pathname);
+        return;
+    }
+
+    // otherwise, printf("removing public write from %s\n", pathname);
+    printf("removing public write from %s\n", pathname);
+
+    // create new mode
+    mode = mode & !2;
+
+    // if chmod(pathname, mode) != 0, error
+    chmod(pathname, mode) != 0;
+}
